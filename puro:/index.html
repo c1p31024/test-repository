@@ -1,63 +1,66 @@
-<html lang="ja">
-  <head>
-    <title>GAS Form</title>
-    <style>
-      body{ width: 100 start; height: 100vh; display: flex; flex-direction: row; }
-      #left{ background-color: #ffeeee; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: start; } 
-    </style>
-    <script>
-      function OnPost(){
+﻿//**********************************************************************************
+//* Copyright (C) 2007,2014 Hitachi Solutions,Ltd.
+//**********************************************************************************
 
-        const URL = "https://script.google.com/macros/s/AKfycbwToOUXf_dkOrh1ACgK_5-UvCvslVTFpQfG79ZMICajK6g-ipodMjKbv2kXPIhkvaXR/exec";
+#region Apache License
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License. 
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+#endregion
 
-        let SendDATA = {
-          "column_1" : document.getElementById("column_1").value,
-          "column_2" : document.getElementById("column_2").value,
-          "column_3" : document.getElementById("column_3").value
-          
-        };
-        let postparam = {
-          "method" : "POST",
-          "mode" : "no-cors",
-          "Content-Type" : "application/x-www-form-urlencoded",
-          "body" : JSON.stringify(SendDATA)
-        };
-        fetch(URL, postparam);
-      }
-      function OnGet(){
+// ************************************************ **********************************
+// * Class name: AssemblyInfo
+// *
+// * Author: AssemblyInfo setting
+// * Update history:
+// *
+// * Date and time update's content
+// * ---------- ---------------- --------------------- -------------------------------
+//*  2015/11/12	 Sandeep         Added AssemblyInfo setting.
+//**********************************************************************************
 
-        const URL = "https://script.google.com/macros/s/AKfycbwToOUXf_dkOrh1ACgK_5-UvCvslVTFpQfG79ZMICajK6g-ipodMjKbv2kXPIhkvaXR/exec";
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
-        fetch(URL)
-        .then(response => {
-          return response.json();
-        })
-        .then(data => {
-          render_text = data.message;
-          document.getElementById("get_value").innerHTML = render_text;
-        })
-        .catch(error => {
-          document.getElementById("get_value").innerHTML = error;
-        });
-      }
-    </script>
-     
-  </head>
-  <body>
-    <div id="left">
-      <h1>アンケート</h1>
-      <p>氏名</p>
-      <input type="text" id="column_1">
-      <p>病害虫を運ぶ鳥や虫</p>
-      <input type="text" id="column_2">
-      <p>お問い合わせ内容</p>
-      <input type="text" id="column_3">
-      
-      <form action="success.html">
-      <button style="margin-top: 20px;" input type="submit"onclick="OnPost();">送信</button>
-    
-      </form>
-    </div>
-      
-  </body>
-</html>
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("ClaimsWeb_sample")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ClaimsWeb_sample")]
+[assembly: AssemblyCopyright("Copyright (C) 2007,2014 Hitachi Solutions,Ltd.")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("f4ebb123-80bf-4084-abb1-80ddfd1d2cbc")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
